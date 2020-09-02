@@ -1,1 +1,38 @@
 @import "../styles/global";
+
+.recipe {
+  background: $stock-white;
+  margin: 5vh 0;
+  padding: 5%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 3px rgba(50, 50, 50, 0.5);
+
+  &__label {
+    font-weight: 500;
+  }
+  &__image {
+    width: 90%;
+    border-radius: 10px;
+  }
+  &__ingredients-list {
+    margin: 10px 0;
+  }
+  &__ingredients {
+    list-style-type: none;
+  }
+  &__calories {
+    font-weight: 500;
+  }
+}
+
+@include tablet {
+  .recipe {
+    width: 40%;
+  }
+}
+
+@include desktop {
+  .recipe {
+    width: 30%;
+  }
+}

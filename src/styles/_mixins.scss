@@ -1,0 +1,21 @@
+@import "./variables";
+
+@mixin mobile-input {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid $stock-black;
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}

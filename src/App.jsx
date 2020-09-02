@@ -36,18 +36,22 @@ const App = () => {
   return (
     <div className="app">
       <header className="app__header">
-        <h1>Gitgrub</h1>
+        <h1 className="app__heading">Gitgrub</h1>
       </header>
-      <form className="app__form" onSubmit={getSearch}>
-        <input
-          type="text"
-          placeholder="Search"
-          value={search}
-          onChange={handleChange}
-        />
-        <button className="app__search">Find Recipes</button>
+      <form className="form" onSubmit={getSearch}>
+        <h2 className="form__heading">Find great recipes now!</h2>
+        <div className="form__wrapper">
+          <input
+            className="form__search"
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={handleChange}
+          />
+          <button className="form__button">Find Recipes</button>
+        </div>
       </form>
-      <section className="app__recipes">
+      <section className="recipes">
         {recipes.map((recipe) => (
           <Recipe
             key={uuidv4()}
