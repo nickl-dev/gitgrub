@@ -10,6 +10,7 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
+  const [text, setText] = useState("Find great recipes now!");
 
   useEffect(() => {
     axios
@@ -24,6 +25,7 @@ const App = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+    setText(`Recipes for...${search}`);
   };
 
   const getSearch = (e) => {
@@ -39,7 +41,7 @@ const App = () => {
         <h1 className="app__heading">Gitgrub</h1>
       </header>
       <form className="form" onSubmit={getSearch}>
-        <h2 className="form__heading">Find great recipes now!</h2>
+        <h2 className="form__heading">{text}</h2>
         <div className="form__wrapper">
           <input
             className="form__search"
