@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/avenirNextLtPro-regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/avenirNextLtPro-demi.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/avenirNextLtPro-bold.ttf");
+  font-weight: bolder;
+}
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1200px;
+
+$stock-black: #323232;
+$stock-white: #fafafa;
