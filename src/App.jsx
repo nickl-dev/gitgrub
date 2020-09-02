@@ -62,6 +62,7 @@ const App = () => {
           />
         ))}
       </section>
+      <footer className="footer">Gitgrub &copy;</footer>
     </div>
   );
 };

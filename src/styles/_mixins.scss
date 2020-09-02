@@ -8,6 +8,11 @@
   border: 1px solid $stock-black;
 }
 
+@mixin tablet-input {
+  font-size: 20px;
+  padding: 15px 30px;
+}
+
 @mixin tablet {
   @media (min-width: $tablet-breakpoint) {
     @content;
