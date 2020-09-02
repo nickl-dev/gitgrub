@@ -23,6 +23,17 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color: #323232, $alpha: 0.5);
+    z-index: -1;
   }
   &__heading {
     color: $stock-white;
@@ -70,6 +81,7 @@ html {
 
 .footer {
   height: 50px;
+  margin-top: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,6 +126,7 @@ html {
   }
 
   .form {
+    margin: 5vh 0;
     &__heading {
       font-size: 28px;
     }
@@ -123,5 +136,9 @@ html {
     &__button {
       @include mobile-input;
     }
+  }
+
+  .footer {
+    margin-top: 2vh;
   }
 }

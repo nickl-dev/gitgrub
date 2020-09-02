@@ -24,7 +24,6 @@ const App = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
-    console.log(search);
   };
 
   const getSearch = (e) => {
@@ -36,6 +35,7 @@ const App = () => {
   return (
     <div className="app">
       <header className="app__header">
+        <div className="app__overlay"></div>
         <h1 className="app__heading">Gitgrub</h1>
       </header>
       <form className="form" onSubmit={getSearch}>
