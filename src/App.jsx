@@ -28,13 +28,20 @@ const App = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+    console.log(search);
+    console.log(recipes);
   };
 
   const getSearch = (e) => {
     e.preventDefault();
-    !search ? openModal() : setQuery(search);
-    setText(`Recipes for...${search}`);
-    setSearch("");
+    setQuery(search);
+    if (search === "") {
+      openModal();
+      setSearch("");
+    } else {
+      setText(`Recipes for...${search}`);
+      setSearch("");
+    }
   };
 
   const openModal = () => {

@@ -4,7 +4,6 @@
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 18px;
-  outline: none;
   border: 1px solid $stock-black;
 }
 
@@ -23,6 +22,9 @@
     background: #b11226;
   }
   &:active {
+    background: #b11226;
+  }
+  &:focus {
     background: #b11226;
   }
 }
