@@ -19,6 +19,8 @@
     margin: 5% 0;
     font-size: 18px;
     list-style-type: none;
+    text-align: start;
+    line-height: 24px;
   }
   &__calories {
     font-weight: 500;
@@ -33,6 +35,10 @@
     }
     &__ingredients-list {
       font-size: 20px;
+      list-style-type: disc;
+    }
+    &__ingredients {
+      text-align: start;
     }
     &__calories {
       font-size: 18px;
@@ -47,9 +53,11 @@
       font-size: 20px;
     }
     &__image {
+      margin: 10% 0;
       width: 100%;
     }
     &__ingredients-list {
+      margin: 10% 0;
       font-size: 18px;
     }
     &__calories {

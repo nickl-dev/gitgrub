@@ -25,12 +25,12 @@ const App = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
-    setText(`Recipes for...${search}`);
   };
 
   const getSearch = (e) => {
     e.preventDefault();
     setQuery(search);
+    setText(`Recipes for...${search}`);
     setSearch("");
   };
 
