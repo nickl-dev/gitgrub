@@ -63,15 +63,22 @@ html {
   &__search {
     @include mobile-input;
     transition: 0.1s ease-in-out;
-    &:focus {
-      border-width: 2px;
+    &:focus,
+    :active {
+      background: #f7f7f7;
     }
   }
   &__button {
     margin: 10px 0;
     @include mobile-input;
     cursor: pointer;
+    background: #dd1630;
+    color: $stock-white;
     font-weight: 500;
+    transition: 0.3s ease-in-out;
+    &:active {
+      background: #b11226;
+    }
   }
 }
 
@@ -139,6 +146,12 @@ html {
     }
     &__button {
       @include mobile-input;
+      &:hover {
+        background: #b11226;
+      }
+      &:focus {
+        background: #b11226;
+      }
     }
   }
 
