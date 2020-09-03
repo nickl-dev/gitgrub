@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import Modal from "react-modal";
 import "./App.scss";
 import Recipe from "./components/Recipe";
+Modal.setAppElement("#root");
 
 const App = () => {
   const APP_ID = "d98da8f0";
@@ -11,6 +13,7 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
   const [text, setText] = useState("Find great recipes now!");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     axios
@@ -29,9 +32,17 @@ const App = () => {
 
   const getSearch = (e) => {
     e.preventDefault();
-    setQuery(search);
+    !search ? openModal() : setQuery(search);
     setText(`Recipes for...${search}`);
     setSearch("");
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -52,6 +63,21 @@ const App = () => {
           />
           <button className="form__button">Find Recipes</button>
         </div>
+        <Modal
+          className="form__modal"
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+          style={{
+            overlay: {
+              backgroundColor: "rgba(32, 32, 32, 0.5)",
+            },
+          }}
+        >
+          <h1 className="form__modal-heading">No recipes were found :(</h1>
+          <button className="form__modal-button" onClick={closeModal}>
+            Go back
+          </button>
+        </Modal>
       </form>
       <section className="recipes">
         {recipes.map((recipe) => (

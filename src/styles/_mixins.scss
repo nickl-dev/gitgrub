@@ -13,6 +13,20 @@
   padding: 15px 30px;
 }
 
+@mixin button-colors {
+  background: #dd1630;
+  color: $stock-white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background: #b11226;
+  }
+  &:active {
+    background: #b11226;
+  }
+}
+
 @mixin tablet {
   @media (min-width: $tablet-breakpoint) {
     @content;

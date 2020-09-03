@@ -24,7 +24,7 @@ html {
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 1;
+    z-index: -1;
   }
   &__overlay {
     position: absolute;
@@ -39,6 +39,7 @@ html {
     color: $stock-white;
     font-size: 64px;
     font-weight: 600;
+    z-index: 1;
   }
 }
 
@@ -63,22 +64,40 @@ html {
   &__search {
     @include mobile-input;
     transition: 0.1s ease-in-out;
-    &:focus,
-    :active {
+    &:focus {
       background: #f7f7f7;
     }
   }
   &__button {
     margin: 10px 0;
     @include mobile-input;
-    cursor: pointer;
-    background: #dd1630;
-    color: $stock-white;
-    font-weight: 500;
-    transition: 0.3s ease-in-out;
-    &:active {
-      background: #b11226;
-    }
+    @include button-colors;
+  }
+  &__modal {
+    height: 25vh;
+    width: 70%;
+    padding: 0 16px;
+    background: $stock-white;
+    border-radius: 30px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+    outline: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  &__modal-heading {
+    font-size: 28px;
+  }
+  &__modal-button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    @include button-colors;
   }
 }
 
@@ -117,6 +136,12 @@ html {
     &__button {
       @include tablet-input;
     }
+    &__modal-heading {
+      font-size: 42px;
+    }
+    &__modal-button {
+      font-size: 20px;
+    }
   }
   .recipes {
     display: flex;
@@ -146,12 +171,12 @@ html {
     }
     &__button {
       @include mobile-input;
-      &:hover {
-        background: #b11226;
-      }
-      &:focus {
-        background: #b11226;
-      }
+    }
+    &__modal-heading {
+      font-size: 32px;
+    }
+    &__modal-button {
+      font-size: 18px;
     }
   }
 
