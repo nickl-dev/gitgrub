@@ -9,6 +9,8 @@ const Recipe = ({ label, image, ingredientLines, calories }) => {
     Aos.init({ duration: 1000 });
   }, []);
 
+  const length = 80;
+
   return (
     <div className="recipe" data-aos="fade-in">
       <h1 className="recipe__label">{label}</h1>
@@ -16,7 +18,7 @@ const Recipe = ({ label, image, ingredientLines, calories }) => {
       <ul className="recipe__ingredients-list">
         {ingredientLines.map((ingredient) => (
           <li className="recipe__ingredients" key={uuidv4()}>
-            {ingredient}
+            {ingredient.substring(0, length)}
           </li>
         ))}
       </ul>
