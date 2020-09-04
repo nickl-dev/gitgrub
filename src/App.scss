@@ -14,6 +14,26 @@ html {
   background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
 }
 
+@keyframes fadeUp {
+  from {
+    margin-top: 200px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .app {
   &__header {
     height: 50vh;
@@ -40,6 +60,7 @@ html {
     font-size: 64px;
     font-weight: 600;
     z-index: 1;
+    animation: fadeUp 1s;
   }
 }
 
@@ -73,6 +94,7 @@ html {
     @include mobile-input;
     @include button-colors;
   }
+
   &__modal {
     height: 25vh;
     width: 70%;
@@ -89,6 +111,7 @@ html {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
   }
   &__modal-heading {
     font-size: 28px;
