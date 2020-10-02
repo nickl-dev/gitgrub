@@ -4,8 +4,9 @@
   background: $stock-white;
   margin: 5vh 0;
   padding: 5%;
+  max-width: 300px;
   border-radius: 10px;
-  box-shadow: 1px 1px 10px 3px rgba(50, 50, 50, 0.5);
+  box-shadow: 1px 1px 10px 1px rgba(50, 50, 50, 0.5);
 
   &__label {
     font-weight: 500;
@@ -13,7 +14,7 @@
   &__image {
     width: 80%;
     margin: 5% 0;
-    border-radius: 50%;
+    border-radius: 5%;
   }
   &__ingredients-list {
     margin: 5% 0;
@@ -29,7 +30,6 @@
 
 @include tablet {
   .recipe {
-    width: 45%;
     &__label {
       font-size: 28px;
     }
@@ -49,6 +49,7 @@
 @include desktop {
   .recipe {
     width: 30%;
+    max-width: none;
     &__label {
       font-size: 20px;
     }
